@@ -1,5 +1,4 @@
 package day.one
-import SubmarineDepth.*
 
 trait SubmarineDepthSuite  extends  munit.FunSuite:
     import SubmarineDepth.*

@@ -22,7 +22,7 @@ object SubmarineDepth:
                 then acc
             else 
                 val tripleSum = depths.head + depths.tail.head + depths.tail.tail.head
-                sum(depths.tail, acc:::List(tripleSum)) // this isn't nice!
+                sum(depths.tail, acc:::List(tripleSum)) // TODO: this feels wrong
 
         sum(depths, Nil)
 
@@ -31,7 +31,7 @@ object SubmarineDepth:
 
 object Main extends App:
     val depths = FileUtils.readListOfIntsFromTxt("/Users/sallyemerson/advent-of-code-21/src/main/scala/day/one/depths.txt")
-    println(s"Part 1: ${SubmarineDepth.countDeepening(depths)}")
-    println(s"Part 2: ${SubmarineDepth.countSliding(depths)}")
+    println(s"Day 1 Part 1: ${SubmarineDepth.countDeepening(depths)}")
+    println(s"Day 2 Part 2: ${SubmarineDepth.countSliding(depths)}")
     
 
