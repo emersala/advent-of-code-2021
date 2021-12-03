@@ -6,6 +6,7 @@ import utils.FileUtils
 object SubmarineDepth:
 
     def countDeepening(depths: List[Int]): Int = 
+        @tailrec
         def count(depths: List[Int], acc: Int): Int = 
             if (depths.isEmpty || depths.tail.isEmpty) 
                 then acc
@@ -16,7 +17,7 @@ object SubmarineDepth:
         count(depths, 0)
 
     def sumSlidingDepths(depths: List[Int]): List[Int] = 
-
+        @tailrec
         def sum(depths: List[Int], acc: List[Int]): List[Int] = 
             if (depths.isEmpty || depths.tail.isEmpty || depths.tail.tail.isEmpty) 
                 then acc
