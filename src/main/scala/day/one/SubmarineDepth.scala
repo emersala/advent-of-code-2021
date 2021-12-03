@@ -22,12 +22,13 @@ object SubmarineDepth:
                 then acc
             else 
                 val tripleSum = depths.head + depths.tail.head + depths.tail.tail.head
-                sum(depths.tail, acc:::List(tripleSum)) // TODO: this feels wrong
+                sum(depths.tail, tripleSum::acc)
 
         sum(depths, Nil)
 
-
-    def countSliding(depths: List[Int]): Int =  countDeepening(sumSlidingDepths(depths)) 
+    // would be good to remove .reverse, this is the quickest reuse solution
+    def countSliding(depths: List[Int]): Int =  countDeepening(sumSlidingDepths(depths).reverse)
+     
 
 object Main extends App:
     val depths = FileUtils.readListOfIntsFromTxt("/Users/sallyemerson/advent-of-code-21/src/main/scala/day/one/depths.txt")
