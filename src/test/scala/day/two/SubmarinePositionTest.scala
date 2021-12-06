@@ -1,7 +1,7 @@
 package day.two
 
 trait SubmarinePositionSuite  extends  munit.FunSuite:
-    import SubmarinePosition.*
+    import SubmarinePositionWithoutAim.*
     import SubmarinePositionWithAim.*
     import utils.FileUtils
 
@@ -10,7 +10,7 @@ trait SubmarinePositionSuite  extends  munit.FunSuite:
 
     test("submarine position") {
         new TestDepths:
-            assertEquals(SubmarinePosition.getPosition(depthList), 150)
+            assertEquals(SubmarinePositionWithoutAim.getPosition(depthList), 150)
     }
 
     test("submarine position using aim (part 2)") {
